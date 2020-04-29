@@ -1,0 +1,15 @@
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\DataProvider.deps.json
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\DataProvider.dll
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\DataProvider.pdb
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.AssemblyInfoInputs.cache
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.AssemblyInfo.cs
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.dll
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.pdb
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\DataProvider.runtimeconfig.json
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\DataProvider.runtimeconfig.dev.json
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.csprojAssemblyReference.cache
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.csproj.CoreCompileInputs.cache
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.genruntimeconfig.cache
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\Models.dll
+F:\santhosh\DataProvider\bin\Debug\netcoreapp3.1\Models.pdb
+F:\santhosh\DataProvider\obj\Debug\netcoreapp3.1\DataProvider.csproj.CopyComplete
