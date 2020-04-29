@@ -1,0 +1,33 @@
+#bookedRide{
+    width: 40%;
+    height: 70vh;
+    float: left;
+    transform: translate(30%,20%);
+}
+#bookedRide h3{
+    text-align: left;
+    margin-left: 25px;
+}
+#rideStatusApproved{
+    font-size: 25px;
+    color: green;
+    width: 70%;
+    margin-left: 20px;
+}
+
+#rideStatusRejected{
+    font-size: 25px;
+    color: red;
+    width: 70%;
+    margin-left: 20px;
+}
+#rideStatus{
+    font-size: 25px;
+    color: #9319ff;
+    width: 70%;
+    margin-left: 20px;
+}
+#requestsNoneMessage{
+    transform: translate(50%,50%);
+
+}

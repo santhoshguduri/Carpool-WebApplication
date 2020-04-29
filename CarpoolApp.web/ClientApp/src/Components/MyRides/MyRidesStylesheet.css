@@ -1,0 +1,28 @@
+#bookedRide-header{
+    font-size: 20px;
+    background-color: #9319ff;
+    width: 25%;
+    margin: 0px 25px;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+#bookedRides{
+    width: 40%;
+    height: 70vh;
+    float: left;
+    transform: translate(10%,20%);
+}
+#offeredRide-header{
+    font-size: 20px;
+    background-color: #ffac19;
+    width: 25%;
+    margin: 0px 25px;
+    padding: 5px 0px;
+    border-radius: 5px;
+}
+#offeredRides{
+    width: 40%;
+    height: 70vh;
+    float: left;
+    transform: translate(0%,20%);
+}

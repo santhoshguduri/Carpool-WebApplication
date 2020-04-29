@@ -1,0 +1,27 @@
+#NavBar{
+    width: 100%;
+    position: absolute;
+}
+#img-button{
+    width: 45px;
+    border-radius: 50px;
+    margin: 10px 20px 10px 10px;
+    padding: 0px;
+    cursor: pointer;
+}
+#sharedLogo{
+    float: left;    
+    margin: 10px 60px;
+}
+#userDetails{
+    right: 0px;
+    margin: 10px 20px;
+    float: right;
+}
+#userDetails h2{
+    float: left;
+    font-family: 'Roboto', sans-serif ;
+    font-size: 20px;
+    margin-top: 20px;
+    
+}

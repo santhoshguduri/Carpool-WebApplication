@@ -1,0 +1,170 @@
+#signup-page-left{
+    width: 68%;
+    float: left;
+}
+#signup-background{
+    background-repeat: no-repeat;
+    height: 50%;
+    position: absolute;
+    left: 0px;
+    top: 50%;
+    width: 63%;
+}
+
+#logo{
+    text-align: left;
+    padding: 0px;
+    margin: 0px;
+    margin-left: 7%;
+    margin-top: 3%;
+}
+#pickup-line{
+    padding: 0px;
+    transform: translate(5%,50%);
+}
+.header{
+    font-size: 110px;
+    margin: 0px;
+    font-style: italic;
+    text-align: left;
+    font-weight: 900;
+    font-family: 'Open Sans', sans-serif;
+    padding: 0px;
+    margin-top: -30px;
+}
+#tagline{
+    text-align: left;
+    margin: 0px;
+    letter-spacing: 5px;
+}
+#miles-text{
+    color: #FFAC19;
+}
+#money-text{
+    color: #9319FF;
+}
+#signup-page-right{
+    background-color: #FFAC19;
+    float: left;
+    width: 32%;
+    height: 100vh;
+    background-image: url('./imgg3.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 30.7em;
+}
+#signupForm{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    margin-top: 7%;
+}
+#line{
+    width: 10%;
+    border: 1.2px solid white;
+    border-radius: 5px;
+    margin-top: 0px;
+}
+#alternative{
+    display: flex;
+    justify-content: center;
+    color: white;
+    margin-top: 15px;
+}
+#alternative h3{
+    margin: 13px 0px;
+}
+#alternative a{
+    text-decoration: none;
+    color: white;
+}
+#log-text{
+    border-bottom: 2px solid white;
+    cursor: pointer;
+}
+#signupForm input[type="text"],input[type="password"],select{
+    border: none;
+    width: 60%;
+    padding: 0px 25px;
+    height: 8vh;
+    border-radius: 4px;
+    margin-bottom: 17px;
+    outline: none;
+}
+.signupForm-elements{
+    position: relative;
+}
+#signupForm label{
+    color: #D1D1D1;
+    font-family: 'Roboto', sans-serif;
+    position: absolute;
+    top: 20px;
+    left: 120px;
+    font-size: 15px;
+    transition: .5s;
+    pointer-events: none;
+}
+#signupForm input:focus ~ label,
+#signupForm input:valid ~ label
+{
+    left: 100px;
+    top: 5px;
+    font-size: 10px;
+}
+
+#signupForm button{
+    border: none;
+    font-family:'Open Sans', sans-serif ;
+    background-color: #9319FF;
+    color: white;
+    width: 27%;
+    height: 5vh;
+    border-radius: 50px;
+    margin-top: 20px;
+    outline: none;
+    
+}
+#signupForm button:hover{
+    background-color: #f319ff;
+}
+#password-eye{
+    position: absolute;
+    top: 18px;
+    right: 110px;
+    font-size: 25px;
+    color: #D1D1D1;
+    cursor: pointer;
+}
+#login-page{
+    background-color: #7553A2;
+    float: left;
+    width: 32%;
+    height: 100vh;
+    background-image: url('./imgg3.png');
+    background-repeat: no-repeat;
+    background-position: bottom;
+    background-size: 30.7em;
+}
+#login-page button{
+    border: none;
+    font-family:'Open Sans', sans-serif ;
+    background-color: #FFAC19;
+    color: white;
+    width: 27%;
+    height: 5vh;
+    border-radius: 50px;
+    margin-top: 20px;
+}
+#login-heading{
+    color: white;
+    margin-top: 50px;
+    font-family: 'Open Sans', sans-serif ;
+}
+#passwordMatch{
+    color: red;
+    display: none;
+}
+#formatMatch{
+    color: red;
+    display: none;
+}

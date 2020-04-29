@@ -1,0 +1,188 @@
+.rideBookCheckbox{
+    -webkit-appearance: none;
+    background-color: #C6C6C6;
+    position: absolute;
+    width: 45px;
+    height: 25px;
+    border-radius: 40px;
+    box-shadow: inset 0 0 5px rgba(0,0,0,.2);
+    outline: none;
+    transition: .5s;
+    top: 0px;
+    right: 0px;
+    margin: 30px 40px;
+}
+
+.rideBookCheckbox:checked{
+    background: #9319ff;
+}
+.rideBookCheckbox:checked ~ form{
+    display: block;
+}
+.rideBookCheckbox:before{
+    content: '';
+    position: absolute;
+    width: 25px;
+    height: 25px;
+    border-radius: 20px;
+    top: 0;
+    left: 0;
+    background: #fff;
+    transition: .5s;
+    transform: scale(.8);
+}
+.rideBookCheckbox:checked:before{
+    left: 20px;
+}
+.rideBookCard{
+    background: #fff;
+    height: 70vh;
+    width: 27%;
+    border-radius: 10px;
+    box-shadow:  0 0 2px 2px #f0f0f0;
+    position: absolute;
+    left: 0px;
+    transform: translate(20%,25%);
+}
+.rideBookCard h2{
+    text-align: left;
+    margin: 20px 0px 0px 25px;
+    font-family: 'Open sans', sans-serif;
+    font-weight: 500;
+}
+.rideBookCard p{
+    text-align: left;
+    margin: 0px 25px;
+    color: #a1a1a1;
+}
+.rideBookForm {
+    text-align: left;
+    margin: 40px 25px;
+    display: none;
+    transition: .5s;
+}
+.bookFormLabel{
+    color: #a1a1a1;
+    font-family: 'Open sans', sans-serif;
+    font-size: 15px;
+    margin: 0px;
+}
+.rideBookForm input[type="text"],input[type="date"]{
+    border: none;
+    border-bottom: 2px solid #d4d4d4;
+    margin-bottom: 15px;
+    width: 95%;
+    padding: 5px;
+    font-size: 15px;
+    outline: none;
+    font-family: 'Open sans',sans-serif;
+    background-color: white;
+    color: black;
+    text-align: left;
+}
+.rideBookForm input[type="text"]:focus,
+input[type="date"]:focus{
+    border-bottom: 2px solid #4a90e2;
+    
+}
+.timeCheckbox{
+    -webkit-appearance: none;
+}
+#routeDetails{
+    float: left;
+    width: 95%;
+}
+.first{
+    color: #9319ff;
+    margin: 0px 0px 5px 1px;
+}
+.middle{
+    color: #e0e0e0;
+    font-size: 10px;
+    margin: 5px 3px;
+}
+.fa-map-marker{
+    font-size: 25px;
+    color: #9319ff;
+
+}
+#routeRepresent{
+    display: flex;
+    flex-direction: column;
+    margin: 0px;
+}
+.rideBookForm .checkboxDiv{
+    width: 33%;
+    float: left;
+    margin: 0px;
+    height: 40px;
+}
+.timeCheckboxLabel{
+    background: #fff;
+    border: 1px solid #b378ff;
+    padding: 3px 10px;
+    margin: 10px 5px 10px 0px;
+    border-radius: 50px;
+    float: left;
+    color: #000;
+    font-size: 15px;
+}
+.timeCheckbox:checked ~ label{
+    color: white;
+    background: #9319ff;
+}
+
+.rideBookForm .submitBtn{
+    border: none;
+    padding: 14px 0px;
+    border-radius: 50px;
+    background: #ffac19;
+    font-family: 'Open sans',sans-serif;
+    font-weight: 800;
+    color: white;
+    width: 100%;
+    float: left;
+    font-size: 15px;
+    outline: none;
+    margin: 10px 10px 0px 0px;
+}
+.rideBookForm h4{
+    color: #9319ff;
+    width: 35%;
+    float: right;
+    text-align: right;
+    margin-right: 20px;
+    cursor: pointer;
+}
+.matchedUsers{
+    width: 65%;
+    top: 20%;
+    left: 33%;
+    position: absolute;
+}
+.matchedUsers h2{
+    color: #9319ff;
+    font-size: 35px;
+    margin: 0px;
+    text-align: left;
+    margin-left: 30px;
+}
+#renderStopComponent{
+    display: none;
+}
+#confirmationDiv{
+    display:none;
+    position:absolute;
+    width:30%;
+    height:30vh;
+    transform:translate(35%,30%);
+    border-radius:5px;
+    background-color:white;
+    left: 0px;
+}
+#confirmationDiv h3{
+    margin-top: 40px;
+}
+#confirmationDiv button{
+    margin: 30px;
+}
