@@ -21,7 +21,7 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Carpool.Services\Carpool.Services.csproj" />
-    <ProjectReference Include="..\DataProvider\DataProvider.csproj" />
+    <ProjectReference Include="..\DataProvider\Carpool.DataProvider.csproj" />
   </ItemGroup>
 
 

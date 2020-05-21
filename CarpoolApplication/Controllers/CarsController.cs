@@ -24,7 +24,7 @@ namespace CarpoolApplication.Controllers
             _service = service;
         }
         [HttpGet("{id}")]
-        public bool CheckIfOwnsCar(long id)
+        public long CheckIfOwnsCar(long id)
         {
             return _service.CheckIfOwnsCar(id);
         }

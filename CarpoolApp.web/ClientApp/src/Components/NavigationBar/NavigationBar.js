@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
-import logo from '../Shared/logo (1).png';
-import user from './user.jfif';
+import React, { Component } from 'react';
+import logo from '../../Assests/Static Files/logo (1).png';
+import user from '../../Assests/Static Files/user.jfif';
 import { connect } from 'react-redux';
 
 class NavBar extends Component{

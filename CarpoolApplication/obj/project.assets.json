@@ -2,6 +2,32 @@
   "version": 3,
   "targets": {
     ".NETCoreApp,Version=v3.1": {
+      "AutoMapper/9.0.0": {
+        "type": "package",
+        "dependencies": {
+          "Microsoft.CSharp": "4.5.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+        "type": "package",
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "2.0.0"
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
+        }
+      },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.3": {
         "type": "package",
         "dependencies": {
@@ -1987,7 +2013,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.1/_._": {}
+          "ref/netstandard1.1/System.Reflection.Emit.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.dll": {}
@@ -2001,7 +2027,7 @@
           "System.Runtime": "4.3.0"
         },
         "compile": {
-          "ref/netstandard1.0/_._": {}
+          "ref/netstandard1.0/System.Reflection.Emit.ILGeneration.dll": {}
         },
         "runtime": {
           "lib/netstandard1.3/System.Reflection.Emit.ILGeneration.dll": {}
@@ -2755,14 +2781,53 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
+      "Carpool.DataProvider/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Carpool.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
+        },
+        "compile": {
+          "bin/placeholder/Carpool.DataProvider.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Carpool.DataProvider.dll": {}
+        }
+      },
+      "Carpool.Models/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "compile": {
+          "bin/placeholder/Carpool.Models.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Carpool.Models.dll": {}
+        }
+      },
+      "Carpool.Repository/1.0.0": {
+        "type": "project",
+        "framework": ".NETCoreApp,Version=v3.1",
+        "dependencies": {
+          "Carpool.DataProvider": "1.0.0"
+        },
+        "compile": {
+          "bin/placeholder/Carpool.Repository.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Carpool.Repository.dll": {}
+        }
+      },
       "Carpool.Services/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
+          "AutoMapper": "9.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "Carpool.Models": "1.0.0",
+          "Carpool.Repository": "1.0.0",
           "Microsoft.IdentityModel.Tokens": "6.5.0",
-          "Models": "1.0.0",
           "Newtonsoft.Json": "12.0.3",
-          "Repository": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.5.0"
         },
         "compile": {
@@ -2771,47 +2836,40 @@
         "runtime": {
           "bin/placeholder/Carpool.Services.dll": {}
         }
-      },
-      "DataProvider/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
-          "Models": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/DataProvider.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/DataProvider.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "compile": {
-          "bin/placeholder/Models.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Models.dll": {}
-        }
-      },
-      "Repository/1.0.0": {
-        "type": "project",
-        "framework": ".NETCoreApp,Version=v3.1",
-        "dependencies": {
-          "DataProvider": "1.0.0"
-        },
-        "compile": {
-          "bin/placeholder/Repository.dll": {}
-        },
-        "runtime": {
-          "bin/placeholder/Repository.dll": {}
-        }
       }
     }
   },
   "libraries": {
+    "AutoMapper/9.0.0": {
+      "sha512": "xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "type": "package",
+      "path": "automapper/9.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.9.0.0.nupkg.sha512",
+        "automapper.nuspec",
+        "lib/net461/AutoMapper.dll",
+        "lib/net461/AutoMapper.pdb",
+        "lib/net461/AutoMapper.xml",
+        "lib/netstandard2.0/AutoMapper.dll",
+        "lib/netstandard2.0/AutoMapper.pdb",
+        "lib/netstandard2.0/AutoMapper.xml"
+      ]
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+      "sha512": "szI4yeRIM7GWe9JyekW0dKYehPB0t6M+I55fPeCebN6PhS7zQZa0eG3bgOnOx+eP3caSNoE7KEJs2rk7MLsh8w==",
+      "type": "package",
+      "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
+      "files": [
+        ".nupkg.metadata",
+        ".signature.p7s",
+        "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
+        "automapper.extensions.microsoft.dependencyinjection.nuspec",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll",
+        "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.pdb"
+      ]
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.3": {
       "sha512": "F19wwKzyE1K/KF30XZq2STKNJNxBrTKa1wLxTy5qdgXh7akzgLreMdC3j7rPzIQVGHlPCMeI30fpmD1k5zHkCQ==",
       "type": "package",
@@ -8859,31 +8917,31 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
+    "Carpool.DataProvider/1.0.0": {
+      "type": "project",
+      "path": "../DataProvider/Carpool.DataProvider.csproj",
+      "msbuildProject": "../DataProvider/Carpool.DataProvider.csproj"
+    },
+    "Carpool.Models/1.0.0": {
+      "type": "project",
+      "path": "../Models/Carpool.Models.csproj",
+      "msbuildProject": "../Models/Carpool.Models.csproj"
+    },
+    "Carpool.Repository/1.0.0": {
+      "type": "project",
+      "path": "../Repository/Carpool.Repository.csproj",
+      "msbuildProject": "../Repository/Carpool.Repository.csproj"
+    },
     "Carpool.Services/1.0.0": {
       "type": "project",
       "path": "../Carpool.Services/Carpool.Services.csproj",
       "msbuildProject": "../Carpool.Services/Carpool.Services.csproj"
-    },
-    "DataProvider/1.0.0": {
-      "type": "project",
-      "path": "../DataProvider/DataProvider.csproj",
-      "msbuildProject": "../DataProvider/DataProvider.csproj"
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
-    },
-    "Repository/1.0.0": {
-      "type": "project",
-      "path": "../Repository/Repository.csproj",
-      "msbuildProject": "../Repository/Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Carpool.DataProvider >= 1.0.0",
       "Carpool.Services >= 1.0.0",
-      "DataProvider >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Sqlite >= 3.1.1",
@@ -8898,11 +8956,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\santhosh\\CarpoolApplication\\CarpoolApplication.csproj",
+      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
       "projectName": "CarpoolApplication",
-      "projectPath": "F:\\santhosh\\CarpoolApplication\\CarpoolApplication.csproj",
+      "projectPath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
       "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-      "outputPath": "F:\\santhosh\\CarpoolApplication\\obj\\",
+      "outputPath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8918,11 +8976,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\santhosh\\Carpool.Services\\Carpool.Services.csproj": {
-              "projectPath": "F:\\santhosh\\Carpool.Services\\Carpool.Services.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\Carpool.Services\\Carpool.Services.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Services\\Carpool.Services.csproj"
             },
-            "F:\\santhosh\\DataProvider\\DataProvider.csproj": {
-              "projectPath": "F:\\santhosh\\DataProvider\\DataProvider.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj"
             }
           }
         }

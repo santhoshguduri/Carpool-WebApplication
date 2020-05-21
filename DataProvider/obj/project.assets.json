@@ -1281,14 +1281,14 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "Models/1.0.0": {
+      "Carpool.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Carpool.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Carpool.Models.dll": {}
         }
       }
     }
@@ -4997,17 +4997,17 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "Models/1.0.0": {
+    "Carpool.Models/1.0.0": {
       "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
+      "path": "../Models/Carpool.Models.csproj",
+      "msbuildProject": "../Models/Carpool.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
+      "Carpool.Models >= 1.0.0",
       "Microsoft.EntityFrameworkCore.SqlServer >= 3.1.3",
-      "Microsoft.EntityFrameworkCore.Tools >= 3.1.3",
-      "Models >= 1.0.0"
+      "Microsoft.EntityFrameworkCore.Tools >= 3.1.3"
     ]
   },
   "packageFolders": {
@@ -5016,11 +5016,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\santhosh\\DataProvider\\DataProvider.csproj",
-      "projectName": "DataProvider",
-      "projectPath": "F:\\santhosh\\DataProvider\\DataProvider.csproj",
+      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj",
+      "projectName": "Carpool.DataProvider",
+      "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj",
       "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-      "outputPath": "F:\\santhosh\\DataProvider\\obj\\",
+      "outputPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -5036,8 +5036,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\santhosh\\Models\\Models.csproj": {
-              "projectPath": "F:\\santhosh\\Models\\Models.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj"
             }
           }
         }

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\santhosh\\Models\\Models.csproj",
-      "projectName": "Models",
-      "projectPath": "F:\\santhosh\\Models\\Models.csproj",
+      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj",
+      "projectName": "Carpool.Models",
+      "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj",
       "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-      "outputPath": "F:\\santhosh\\Models\\obj\\",
+      "outputPath": "F:\\santhosh\\CarpoolWebApp\\Models\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",

@@ -1253,28 +1253,28 @@
           "lib/netstandard1.3/System.Xml.XmlSerializer.dll": {}
         }
       },
-      "DataProvider/1.0.0": {
+      "Carpool.DataProvider/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
-          "Models": "1.0.0"
+          "Carpool.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
         },
         "compile": {
-          "bin/placeholder/DataProvider.dll": {}
+          "bin/placeholder/Carpool.DataProvider.dll": {}
         },
         "runtime": {
-          "bin/placeholder/DataProvider.dll": {}
+          "bin/placeholder/Carpool.DataProvider.dll": {}
         }
       },
-      "Models/1.0.0": {
+      "Carpool.Models/1.0.0": {
         "type": "project",
         "framework": ".NETCoreApp,Version=v3.1",
         "compile": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Carpool.Models.dll": {}
         },
         "runtime": {
-          "bin/placeholder/Models.dll": {}
+          "bin/placeholder/Carpool.Models.dll": {}
         }
       }
     }
@@ -4942,20 +4942,20 @@
         "system.xml.xmlserializer.nuspec"
       ]
     },
-    "DataProvider/1.0.0": {
+    "Carpool.DataProvider/1.0.0": {
       "type": "project",
-      "path": "../DataProvider/DataProvider.csproj",
-      "msbuildProject": "../DataProvider/DataProvider.csproj"
+      "path": "../DataProvider/Carpool.DataProvider.csproj",
+      "msbuildProject": "../DataProvider/Carpool.DataProvider.csproj"
     },
-    "Models/1.0.0": {
+    "Carpool.Models/1.0.0": {
       "type": "project",
-      "path": "../Models/Models.csproj",
-      "msbuildProject": "../Models/Models.csproj"
+      "path": "../Models/Carpool.Models.csproj",
+      "msbuildProject": "../Models/Carpool.Models.csproj"
     }
   },
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
-      "DataProvider >= 1.0.0"
+      "Carpool.DataProvider >= 1.0.0"
     ]
   },
   "packageFolders": {
@@ -4964,11 +4964,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\santhosh\\Repository\\Repository.csproj",
-      "projectName": "Repository",
-      "projectPath": "F:\\santhosh\\Repository\\Repository.csproj",
+      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj",
+      "projectName": "Carpool.Repository",
+      "projectPath": "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj",
       "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-      "outputPath": "F:\\santhosh\\Repository\\obj\\",
+      "outputPath": "F:\\santhosh\\CarpoolWebApp\\Repository\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -4984,8 +4984,8 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\santhosh\\DataProvider\\DataProvider.csproj": {
-              "projectPath": "F:\\santhosh\\DataProvider\\DataProvider.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj"
             }
           }
         }

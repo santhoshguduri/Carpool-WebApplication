@@ -38,26 +38,27 @@ class OfferRideStops extends Component{
         });  
     }
 
+    handleOnChange = (event) => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        });
+    }
+
     handleSubmit=(e)=>{
         e.preventDefault();
         var route = [];
-        route = [this.props.fromArea,...this.state.addresses,this.props.toArea];
-        var availableSeats;
-        if(document.getElementById('one').checked){
-            availableSeats = Number(document.getElementById('one').value);
-        }
-        else if(document.getElementById('two').checked){
-            availableSeats = Number(document.getElementById('two').value);
-        }
-        else if(document.getElementById('three').checked){
-            availableSeats = Number(document.getElementById('three').value);
-        }
+        route = [this.props.fromArea, ...this.state.addresses, this.props.toArea];
+        var availableSeats = Number(this.state.seats);
+        
         var rideOfferedDate = this.props.date;
         var time = this.props.time;
+        var carId = JSON.parse(sessionStorage.getItem("carId"));
         var offerRide ={
             route,
             availableSeats,
             rideOfferedDate,
+            carId,
             time
         }
         console.log(offerRide);

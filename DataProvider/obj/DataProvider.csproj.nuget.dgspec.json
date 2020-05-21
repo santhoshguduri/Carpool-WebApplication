@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\santhosh\\DataProvider\\DataProvider.csproj": {}
+    "F:\\santhosh\\CarpoolWebApp\\DataProvider\\DataProvider.csproj": {}
   },
   "projects": {
-    "F:\\santhosh\\DataProvider\\DataProvider.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\DataProvider\\DataProvider.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\DataProvider\\DataProvider.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\DataProvider.csproj",
         "projectName": "DataProvider",
-        "projectPath": "F:\\santhosh\\DataProvider\\DataProvider.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\DataProvider.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\DataProvider\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\santhosh\\Models\\Models.csproj": {
-                "projectPath": "F:\\santhosh\\Models\\Models.csproj"
+              "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj": {
+                "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "F:\\santhosh\\Models\\Models.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\Models\\Models.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "F:\\santhosh\\Models\\Models.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\Models\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",

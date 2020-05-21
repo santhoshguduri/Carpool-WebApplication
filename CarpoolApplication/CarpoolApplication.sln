@@ -5,15 +5,17 @@ VisualStudioVersion = 16.0.30002.166
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarpoolApplication", "CarpoolApplication.csproj", "{5D9C7A7C-C998-4805-80D2-EC60A0D0FDE2}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "DataProvider", "..\DataProvider\DataProvider.csproj", "{07B0AD8C-AD99-4661-BCBE-1A283B03B7D0}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carpool.DataProvider", "..\DataProvider\Carpool.DataProvider.csproj", "{07B0AD8C-AD99-4661-BCBE-1A283B03B7D0}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Models", "..\Models\Models.csproj", "{18A13179-BA55-42B1-9760-12518FFEA654}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carpool.Models", "..\Models\Carpool.Models.csproj", "{18A13179-BA55-42B1-9760-12518FFEA654}"
 EndProject
-Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Repository", "..\Repository\Repository.csproj", "{254199EC-7480-437A-BCC7-C56C6BF7DDD6}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carpool.Repository", "..\Repository\Carpool.Repository.csproj", "{254199EC-7480-437A-BCC7-C56C6BF7DDD6}"
 EndProject
 Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carpool.Services", "..\Carpool.Services\Carpool.Services.csproj", "{24C6022B-2035-4044-A2DF-151FD578789A}"
 EndProject
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "CarpoolApp.web", "..\CarpoolApp.web\CarpoolApp.web.csproj", "{F887C14A-0E8D-47A6-AB97-6EEA2AF670FE}"
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "CarpoolApp.web", "..\CarpoolApp.web\CarpoolApp.web.csproj", "{F887C14A-0E8D-47A6-AB97-6EEA2AF670FE}"
+EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "Carpool.Tests", "..\Carpool.Tests\Carpool.Tests.csproj", "{D86B5E49-1A07-4F6E-8F79-E8283097AD5F}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
@@ -45,6 +47,10 @@ Global
 		{F887C14A-0E8D-47A6-AB97-6EEA2AF670FE}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{F887C14A-0E8D-47A6-AB97-6EEA2AF670FE}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{F887C14A-0E8D-47A6-AB97-6EEA2AF670FE}.Release|Any CPU.Build.0 = Release|Any CPU
+		{D86B5E49-1A07-4F6E-8F79-E8283097AD5F}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{D86B5E49-1A07-4F6E-8F79-E8283097AD5F}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{D86B5E49-1A07-4F6E-8F79-E8283097AD5F}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{D86B5E49-1A07-4F6E-8F79-E8283097AD5F}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

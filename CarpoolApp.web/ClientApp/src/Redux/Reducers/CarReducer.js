@@ -4,8 +4,8 @@ import { CHECK_CAR_PRESENT_SUCCESS, CHECK_CAR_PRESENT_FAILURE, CREATE_CAR_SUCCES
 export const checkCarPresentReducer = (state = carInitialState,action) =>{
     switch(action.type){
         case CHECK_CAR_PRESENT_SUCCESS:
-            return{
-                isPresent : action.payload,
+            return {
+                isPresent: action.payload != 0 ? true : false,
                 error :''
             }
         case CHECK_CAR_PRESENT_FAILURE:

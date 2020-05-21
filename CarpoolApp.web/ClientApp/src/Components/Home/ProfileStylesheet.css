@@ -1,5 +1,5 @@
 #profile{
-    background-image: url('../Athentication/img3.png');
+    background-image: url('../../Assests/Static Files/img3.png');
     background-repeat: no-repeat;
     height: 100vh;
     background-size: contain;
@@ -44,7 +44,7 @@
     font-weight: 800;
 }
 .appBackground{
-    background-image: url('./img4.png');
+    background-image: url('../../Assests/Static Files/img4.png');
     height: 100vh;
     width: 100%;
     background-position: bottom;

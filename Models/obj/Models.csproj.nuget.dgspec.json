@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\santhosh\\Models\\Models.csproj": {}
+    "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj": {}
   },
   "projects": {
-    "F:\\santhosh\\Models\\Models.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\Models\\Models.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj",
         "projectName": "Models",
-        "projectPath": "F:\\santhosh\\Models\\Models.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Models.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\Models\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",

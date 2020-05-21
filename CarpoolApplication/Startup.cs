@@ -19,6 +19,8 @@ using Models.DataModels;
 using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
+using AutoMapper;
+using CarpoolApplication.MappingProfiles;
 
 namespace CarpoolApplication
 {
@@ -47,6 +49,8 @@ namespace CarpoolApplication
             services.AddScoped<IRepositoryManager<Booking>, RepositoryManager<Booking>>();
             services.AddScoped<IRepositoryManager<Car>, RepositoryManager<Car>>();
             services.AddScoped<IRepositoryManager<OfferRide>, RepositoryManager<OfferRide>>();
+
+            services.AddAutoMapper(typeof(MappingProfile));
 
             services.AddDbContext<CarpoolDBContext>(options => options.UseSqlServer(Configuration.GetConnectionString("CarpoolDBContext")));
             services.AddCors(options =>

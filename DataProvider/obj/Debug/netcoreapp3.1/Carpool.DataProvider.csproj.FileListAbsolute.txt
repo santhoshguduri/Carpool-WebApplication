@@ -1,0 +1,15 @@
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.DataProvider.deps.json
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.DataProvider.runtimeconfig.json
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.DataProvider.runtimeconfig.dev.json
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.DataProvider.dll
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.DataProvider.pdb
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.Models.dll
+F:\santhosh\CarpoolWebApp\DataProvider\bin\Debug\netcoreapp3.1\Carpool.Models.pdb
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.csprojAssemblyReference.cache
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.csproj.CoreCompileInputs.cache
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.AssemblyInfoInputs.cache
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.AssemblyInfo.cs
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.csproj.CopyComplete
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.dll
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.pdb
+F:\santhosh\CarpoolWebApp\DataProvider\obj\Debug\netcoreapp3.1\Carpool.DataProvider.genruntimeconfig.cache

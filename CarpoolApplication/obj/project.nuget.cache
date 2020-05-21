@@ -1,9 +1,11 @@
 {
   "version": 2,
-  "dgSpecHash": "Vv0BUT0tafAAbV7HiIcusE+ewSH/rV+p05jvLdD/B/n5QtAyMvJbpcHH+EY3QjX2bU/NLpWTgfJ1kwYUxOvAgg==",
+  "dgSpecHash": "1nLtTEsX7KTb+UOv6TfXrFBxsqfHLegwJsQd52J+y9mLNI5dUA+5osafB+iMcVnUA438SyeB1Hnkua1vIaD32Q==",
   "success": true,
-  "projectFilePath": "F:\\santhosh\\CarpoolApplication\\CarpoolApplication.csproj",
+  "projectFilePath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
   "expectedPackageFiles": [
+    "C:\\Users\\SANTHOSH\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
+    "C:\\Users\\SANTHOSH\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",
     "C:\\Users\\SANTHOSH\\.nuget\\packages\\microsoft.aspnetcore.authentication.jwtbearer\\3.1.3\\microsoft.aspnetcore.authentication.jwtbearer.3.1.3.nupkg.sha512",
     "C:\\Users\\SANTHOSH\\.nuget\\packages\\microsoft.aspnetcore.html.abstractions\\2.2.0\\microsoft.aspnetcore.html.abstractions.2.2.0.nupkg.sha512",
     "C:\\Users\\SANTHOSH\\.nuget\\packages\\microsoft.aspnetcore.razor\\2.2.0\\microsoft.aspnetcore.razor.2.2.0.nupkg.sha512",

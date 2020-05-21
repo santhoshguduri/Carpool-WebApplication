@@ -6,32 +6,41 @@ import { toggleSignupLogin } from '../../Redux/Actions/AuthenticationActions';
 import { store } from '../../Redux/Store';
 
 class Login extends Component{
+    constructor(props) {
+        super(props);
+        
+    }
 
     handleSubmit = (e) => {
         e.preventDefault();
         console.log(this.state);
-        const userName = document.getElementById("email").value;
-        const password = document.getElementById("password").value;
+        const userName = this.state.email;
+        const password = this.state.password;
 
         console.log(userName,password);
         this.props.userAuthentication(userName,password);
-        
-      }
+    }
 
+    handleOnChange = (event) => {
+        this.setState({
+            ...this.state,
+            [event.target.name]: event.target.value
+        });
+    }
 
-      handlePasswordDisplay = () =>{
+    handlePasswordDisplay = () => {
         var inputElement = document.getElementById("password");
         if (inputElement.type === "password") {
             inputElement.type = "text";
         } else {
             inputElement.type = "password";
         }
-    }
+      }
 
       handleRedirectToSignup = () =>{
         
         this.props.onToggle(false);
-    }
+      }
 
     render(){
         return(
@@ -42,14 +51,16 @@ class Login extends Component{
                 <hr id="line"></hr>
                     <form id="signupForm" >
                         <div className="signupForm-elements">
-                            <input type="text" 
+                        <input type="text"
+                            onChange={this.handleOnChange}
                                     name="email"
                                     id = "email"
                                     defaultValue="" required/>
                             <label>Enter Email Id</label><br/>
                         </div>
                         <div className="signupForm-elements">
-                            <input type="password" 
+                        <input type="password"
+                            onChange={this.handleOnChange}
                                     id="password"
                                     name="password"
                                     defaultValue="" required/>

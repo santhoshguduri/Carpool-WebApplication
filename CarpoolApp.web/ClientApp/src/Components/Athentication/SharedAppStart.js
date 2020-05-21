@@ -1,6 +1,6 @@
-import React,{Component} from 'react';
-import appRepresent from './img1.png'
-import logo from '../Shared/logo (1).png'
+import React, { Component } from 'react';
+import appRepresent from '../../Assests/Static Files/img1.png'
+import logo from '../../Assests/Static Files/logo (1).png'
 import Signup from './Signup'
 import Login from './Login'
 import { connect } from 'react-redux';

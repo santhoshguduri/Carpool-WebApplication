@@ -14,6 +14,7 @@ export const CheckIfUserCarRegistered =(id) => {
         .then(response => {
             console.log(response);
             dispatch(checkCarPresentSuccess(response));
+            sessionStorage.setItem('carId', JSON.stringify(response));
         })
         .catch(error=>{
             console.log(error);

@@ -24,8 +24,8 @@
     ".NETCoreApp,Version=v3.1": {
       "CarpoolApplication/1.0.0": {
         "dependencies": {
+          "Carpool.DataProvider": "1.0.0",
           "Carpool.Services": "1.0.0",
-          "DataProvider": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",
           "Microsoft.EntityFrameworkCore.Sqlite": "3.1.1",
@@ -309,6 +309,36 @@
         },
         "compile": {
           "CarpoolApplication.dll": {}
+        }
+      },
+      "AutoMapper/9.0.0": {
+        "dependencies": {
+          "Microsoft.CSharp": "4.7.0",
+          "System.Reflection.Emit": "4.3.0"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.dll": {
+            "assemblyVersion": "9.0.0.0",
+            "fileVersion": "9.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.dll": {}
+        }
+      },
+      "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+        "dependencies": {
+          "AutoMapper": "9.0.0",
+          "Microsoft.Extensions.DependencyInjection.Abstractions": "3.1.3"
+        },
+        "runtime": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {
+            "assemblyVersion": "0.0.0.0",
+            "fileVersion": "7.0.0.0"
+          }
+        },
+        "compile": {
+          "lib/netstandard2.0/AutoMapper.Extensions.Microsoft.DependencyInjection.dll": {}
         }
       },
       "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.3": {
@@ -2383,12 +2413,45 @@
           "System.Xml.XmlDocument": "4.3.0"
         }
       },
+      "Carpool.DataProvider/1.0.0": {
+        "dependencies": {
+          "Carpool.Models": "1.0.0",
+          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3"
+        },
+        "runtime": {
+          "Carpool.DataProvider.dll": {}
+        },
+        "compile": {
+          "Carpool.DataProvider.dll": {}
+        }
+      },
+      "Carpool.Models/1.0.0": {
+        "runtime": {
+          "Carpool.Models.dll": {}
+        },
+        "compile": {
+          "Carpool.Models.dll": {}
+        }
+      },
+      "Carpool.Repository/1.0.0": {
+        "dependencies": {
+          "Carpool.DataProvider": "1.0.0"
+        },
+        "runtime": {
+          "Carpool.Repository.dll": {}
+        },
+        "compile": {
+          "Carpool.Repository.dll": {}
+        }
+      },
       "Carpool.Services/1.0.0": {
         "dependencies": {
+          "AutoMapper": "9.0.0",
+          "AutoMapper.Extensions.Microsoft.DependencyInjection": "7.0.0",
+          "Carpool.Models": "1.0.0",
+          "Carpool.Repository": "1.0.0",
           "Microsoft.IdentityModel.Tokens": "6.5.0",
-          "Models": "1.0.0",
           "Newtonsoft.Json": "12.0.3",
-          "Repository": "1.0.0",
           "System.IdentityModel.Tokens.Jwt": "6.5.0"
         },
         "runtime": {
@@ -2396,37 +2459,6 @@
         },
         "compile": {
           "Carpool.Services.dll": {}
-        }
-      },
-      "DataProvider/1.0.0": {
-        "dependencies": {
-          "Microsoft.EntityFrameworkCore.SqlServer": "3.1.3",
-          "Models": "1.0.0"
-        },
-        "runtime": {
-          "DataProvider.dll": {}
-        },
-        "compile": {
-          "DataProvider.dll": {}
-        }
-      },
-      "Models/1.0.0": {
-        "runtime": {
-          "Models.dll": {}
-        },
-        "compile": {
-          "Models.dll": {}
-        }
-      },
-      "Repository/1.0.0": {
-        "dependencies": {
-          "DataProvider": "1.0.0"
-        },
-        "runtime": {
-          "Repository.dll": {}
-        },
-        "compile": {
-          "Repository.dll": {}
         }
       },
       "Microsoft.AspNetCore.Antiforgery/3.1.0.0": {
@@ -4063,6 +4095,20 @@
       "serviceable": false,
       "sha512": ""
     },
+    "AutoMapper/9.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-xCqvoxT4HIrNY/xlXG9W+BA/awdrhWvMTKTK/igkGSRbhOhpl3Q8O8Gxlhzjc9JsYqE7sS6AxgyuUUvZ6R5/Bw==",
+      "path": "automapper/9.0.0",
+      "hashPath": "automapper.9.0.0.nupkg.sha512"
+    },
+    "AutoMapper.Extensions.Microsoft.DependencyInjection/7.0.0": {
+      "type": "package",
+      "serviceable": true,
+      "sha512": "sha512-szI4yeRIM7GWe9JyekW0dKYehPB0t6M+I55fPeCebN6PhS7zQZa0eG3bgOnOx+eP3caSNoE7KEJs2rk7MLsh8w==",
+      "path": "automapper.extensions.microsoft.dependencyinjection/7.0.0",
+      "hashPath": "automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512"
+    },
     "Microsoft.AspNetCore.Authentication.JwtBearer/3.1.3": {
       "type": "package",
       "serviceable": true,
@@ -5253,22 +5299,22 @@
       "path": "system.xml.xmlserializer/4.3.0",
       "hashPath": "system.xml.xmlserializer.4.3.0.nupkg.sha512"
     },
+    "Carpool.DataProvider/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Carpool.Models/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
+    "Carpool.Repository/1.0.0": {
+      "type": "project",
+      "serviceable": false,
+      "sha512": ""
+    },
     "Carpool.Services/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "DataProvider/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Models/1.0.0": {
-      "type": "project",
-      "serviceable": false,
-      "sha512": ""
-    },
-    "Repository/1.0.0": {
       "type": "project",
       "serviceable": false,
       "sha512": ""
