@@ -10,13 +10,10 @@ export const AuthenticateTokenInitialState = {
         token:''
     },
     error:'',
-    isAuthenticated:false
+    isAuthenticated:false,
+    isLoginRendered:true
 }
 
-export const toggleInitialState =
-{
-    isLoginRendered : true
-}
 
 export const userAutenticationSuccess = data =>{
     return{

@@ -20,9 +20,9 @@
 
   <ItemGroup>
     <ProjectReference Include="..\Carpool.Services\Carpool.Services.csproj" />
-    <ProjectReference Include="..\CarpoolApplication\CarpoolApplication.csproj" />
-    <ProjectReference Include="..\Models\Carpool.Models.csproj" />
-    <ProjectReference Include="..\Repository\Carpool.Repository.csproj" />
+    <ProjectReference Include="..\Carpool.Controllers\CarpoolApplication.csproj" />
+    <ProjectReference Include="..\Carpool.Models\Carpool.Models.csproj" />
+    <ProjectReference Include="..\Carpool.Repository\Carpool.Repository.csproj" />
   </ItemGroup>
 
 </Project>

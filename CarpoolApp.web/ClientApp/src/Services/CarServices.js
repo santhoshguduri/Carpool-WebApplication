@@ -1,8 +1,7 @@
-import { checkCarPresentSuccess, checkCarPresentFailure, createCarSuccess, createCarFailure } from "../Actions/CarActions";
+import { checkCarPresentSuccess, createCarSuccess, createCarFailure } from "../Store/Actions/CarActions";
 
 
-export const CheckIfUserCarRegistered =(id) => {
-    return function(dispatch){
+export const CheckIfUserCarRegistered =(id,dispatch) => {
         fetch('https://localhost:44304/cars/checkifownscar/'+id,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -18,16 +17,12 @@ export const CheckIfUserCarRegistered =(id) => {
         })
         .catch(error=>{
             console.log(error);
-            dispatch(checkCarPresentFailure(error));
         });
-        
-    }
 }
 
 
-export const RegisterCar =(car) => {
-    return function(dispatch){
-        fetch('https://localhost:44304/cars/createcar/'+JSON.parse(sessionStorage.getItem('authorized')).userId,{method: 'post',
+export const RegisterCar = (car,dispatch) => {
+        fetch('https://localhost:44304/cars/createcar',{method: 'post',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
             'Authorization': 'Bearer '+JSON.parse(sessionStorage.getItem('authorized')).token},
@@ -43,5 +38,4 @@ export const RegisterCar =(car) => {
             console.log(error);
             dispatch(createCarFailure(error));
         });
-    }
 }

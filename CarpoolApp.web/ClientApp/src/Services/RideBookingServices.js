@@ -1,7 +1,7 @@
-import { searchRidesSuccess, searchRidesFailure, fetchBookingSuccess, fetchBookingFailure, fetchBookingRequestsSuccess, fetchBookingRequestsFailure, fetchAllBookingsSuccess, fetchAllBookingsFailure } from "../Actions/RideBookingActions";
+import { searchRidesSuccess, fetchBookingSuccess, fetchBookingRequestsSuccess, fetchAllBookingsSuccess, failure } from "../Store/Actions/RideBookingActions";
 
 export const CreateRideBooking =(rideBooking) => {
-    return function(){
+    
         fetch('https://localhost:44304/bookings/createbooking',{method: 'post',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -13,11 +13,9 @@ export const CreateRideBooking =(rideBooking) => {
         .catch(error=>{
             console.log(error);
         });
-    }
 }
 
-export const searchAvailableRides =(startPoint,destination,seats,rideBookingDate,time) => {
-    return function (dispatch) {
+export const searchAvailableRides =(startPoint,destination,seats,rideBookingDate,time,dispatch) => {
         fetch('https://localhost:44304/bookings/searchavailablerides/' + JSON.parse(sessionStorage.getItem('authorized')).userId + '?startpoint=' + startPoint + '&destination=' + destination + '&seats=' + seats + '&rideBookingDate=' + rideBookingDate + '&time=' + time, {
             method: 'get',
         headers: {  "accept":"application/json",
@@ -32,14 +30,12 @@ export const searchAvailableRides =(startPoint,destination,seats,rideBookingDate
             dispatch(searchRidesSuccess(response));
         })
         .catch(error=>{
-            dispatch(searchRidesFailure(error));
+            dispatch(failure(error));
             console.log(error);
         });
-    }
 }
 
-export const getBooking =() => {
-    return function(dispatch){
+export const getBooking =(dispatch) => {
         fetch('https://localhost:44304/bookings/getride/'+JSON.parse(sessionStorage.getItem('lastActions')).lastBookingId,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -53,14 +49,12 @@ export const getBooking =() => {
             dispatch(fetchBookingSuccess(response));
         })
         .catch(error=>{
-            dispatch(fetchBookingFailure(error));
+            dispatch(failure(error));
             console.log(error);
         });
-    }
 }
 
-export const getBookingRequests =() => {
-    return function(dispatch){
+export const getBookingRequests =(dispatch) => {
         fetch('https://localhost:44304/bookings/getbookingrequests/'+JSON.parse(sessionStorage.getItem('authorized')).userId,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -74,14 +68,12 @@ export const getBookingRequests =() => {
             dispatch(fetchBookingRequestsSuccess(response));
         })
         .catch(error=>{
-            dispatch(fetchBookingRequestsFailure(error));
+            dispatch(failure(error));
             console.log(error);
         });
-    }
 }
 
 export const setBookingStatus =(bookingId,status) => {
-    return function(){
         fetch('https://localhost:44304/bookings/setbookingstatus?rideofferid='+JSON.parse(sessionStorage.getItem('lastActions')).lastRideOfferedId+'&bookingId='+bookingId+'&status='+status,{method: 'post',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -94,11 +86,9 @@ export const setBookingStatus =(bookingId,status) => {
         .catch(error=>{
             console.log(error);
         });
-    }
 }
 
-export const getAllBookings =() => {
-    return function(dispatch){
+export const getAllBookings = (dispatch) => {
         fetch('https://localhost:44304/bookings/getbookings/'+JSON.parse(sessionStorage.getItem('authorized')).userId,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -112,8 +102,7 @@ export const getAllBookings =() => {
             dispatch(fetchAllBookingsSuccess(response));
         })
         .catch(error=>{
-            dispatch(fetchAllBookingsFailure(error));
+            dispatch(failure(error));
             console.log(error);
         });
-    }
 }

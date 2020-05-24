@@ -1,49 +1,41 @@
-import React,{ Component } from "react"
+import React,{  useEffect, useContext } from "react"
 import MatchedUser from '../MatchedUser/MatchedUsers';
-import { connect } from "react-redux";
-import { getAllBookings } from "../../Redux/Services/RideBookingServices";
-import { getAllRidesOffered } from "../../Redux/Services/RideOfferingServices";
+import { getAllBookings } from "../../Services/RideBookingServices";
+import { getAllRidesOffered } from "../../Services/RideOfferingServices";
+import { BookingContext } from "../../Store/Context/BookingContext";
+import { RideContext } from "../../Store/Context/RidesContext";
 
-class MyRides extends Component{
+function MyRides() {    
 
-    componentDidMount(){
-        this.props.getAllBookings();
-        this.props.getAllOfferedRides();
-    }
+    const bookingContext = useContext(BookingContext);
 
-    render(){
+    const rideContext = useContext(RideContext);
+
+    useEffect(() => {
+        console.log(bookingContext.bookingDispatch);
+        getAllBookings(bookingContext.bookingDispatch);
+        getAllRidesOffered(rideContext.rideDispatch);
+    },[]);
+
+        console.log(bookingContext.bookingState);
         return(
             <div className="appBackground">
                 <div id="bookedRides">
                 <p id="bookedRide-header">Booked rides</p>
-                {this.props.bookings.map((booking)=>(
+                {bookingContext.bookingState.rides.map((booking)=>(
                     <MatchedUser ride={booking} />
                 ))}
                 </div>
                 <div id="offeredRides">
                 <p id="offeredRide-header">Offered rides</p>
-                {this.props.rides.map((ride)=>(
+                {rideContext.rideState.rides.map((ride)=>(
                     <MatchedUser ride={ride}/>
                 ))
                     }
                 </div>
             </div>
         )
-    }
 }
 
-const mapStateToProps= state =>{
-    return{
-        bookings:state.fetchAllBookings.rides,
-        rides:state.fetchAllRidesOffered.rides
-    }
-}
 
-const mapDispatchToProps = dispatch =>{
-    return{
-        getAllBookings : ()=> dispatch(getAllBookings()),
-        getAllOfferedRides : ()=>dispatch(getAllRidesOffered())
-    }
-}
-
-export default connect(mapStateToProps,mapDispatchToProps)(MyRides);
+export default MyRides;

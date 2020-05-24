@@ -15,7 +15,7 @@ namespace Carpool.Tests.SampleData
                 AvailableSeats = 2,
                 CarId = 2,
                 RideOfferedDate = DateTime.Now.Date,
-                Route = new List<string>() { "Ashoknagar", "Sircilla", "Venkampet" },
+                NormalRoute = new List<string>() { "Ashoknagar", "Sircilla", "Venkampet" },
                 Time = "3am-6am",
             };
             return ride;

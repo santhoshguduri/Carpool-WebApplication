@@ -7,3 +7,12 @@ F:\santhosh\CarpoolWebApp\Models\obj\Debug\netcoreapp3.1\Carpool.Models.Assembly
 F:\santhosh\CarpoolWebApp\Models\obj\Debug\netcoreapp3.1\Carpool.Models.AssemblyInfo.cs
 F:\santhosh\CarpoolWebApp\Models\obj\Debug\netcoreapp3.1\Carpool.Models.dll
 F:\santhosh\CarpoolWebApp\Models\obj\Debug\netcoreapp3.1\Carpool.Models.pdb
+F:\santhosh\CarpoolWebApp\Carpool.Models\bin\Debug\netcoreapp3.1\Carpool.Models.deps.json
+F:\santhosh\CarpoolWebApp\Carpool.Models\bin\Debug\netcoreapp3.1\Carpool.Models.dll
+F:\santhosh\CarpoolWebApp\Carpool.Models\bin\Debug\netcoreapp3.1\Carpool.Models.pdb
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.csprojAssemblyReference.cache
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.csproj.CoreCompileInputs.cache
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.AssemblyInfoInputs.cache
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.AssemblyInfo.cs
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.dll
+F:\santhosh\CarpoolWebApp\Carpool.Models\obj\Debug\netcoreapp3.1\Carpool.Models.pdb

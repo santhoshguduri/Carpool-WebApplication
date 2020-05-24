@@ -1,17 +1,17 @@
-import React,{Component} from 'react';
-import { connect } from 'react-redux';
-import { store } from '../../Redux/Store';
-import { toggleSignupLogin } from '../../Redux/Actions/AuthenticationActions';
-import { CreateUser } from '../../Redux/Services/AccountManagementServices';
-import {onChangeName, onChangeEmail, onChangeMobile, onChangeGender, onChangePasswordStrength, onSubmitValidation} from './validations'
+import React,{ useContext, useState} from 'react';
+import { CreateUser } from '../../Services/AccountManagementServices';
+import { UserContext } from '../../Store/Context/UserContext';
+import { toggleSignupLogin } from '../../Store/Actions/AuthenticationActions';
+import { onChangeName, onChangeEmail, onChangeMobile, onChangeGender, onChangePasswordStrength } from './validations';
 
 
-class Signup extends Component{
-    constructor(props) {
-        super(props);
-    }
+function Signup() {
     
-    handlePasswordDisplay = () =>{
+    const userContext = useContext(UserContext);
+
+    const [user,setUser] = useState({});
+
+    const handlePasswordDisplay = () =>{
         var inputElement = document.getElementById("password");
         if (inputElement.type === "password") {
             inputElement.type = "text";
@@ -20,25 +20,25 @@ class Signup extends Component{
         }
     }
 
-    handleSubmit = (e) =>{
+    const handleSubmit = (e) =>{
         e.preventDefault();
-        const name = this.state.name;
-        const gender = this.state.gender;
-        const mobileno = this.state.mobile;
-        const email = this.state.email;
-        const password = this.state.password;
-        const confirmPassword = this.state.confirmPassword;
+        const name = user.name;
+        const gender = user.gender;
+        const mobileno = user.mobile;
+        const email = user.email;
+        const password = user.password;
+        const confirmPassword = user.confirmPassword;
         if(password==confirmPassword && password !=''){
-        const user={
+        const person={
             name,
             gender,
             mobileno,
             email,
             password
         }
-        this.props.onCreate(user);
-        this.handleRedirectToLogin();
-        console.log(user);
+        CreateUser(person);
+        handleRedirectToLogin();
+        console.log(person);
         }
         else if(password != confirmPassword){
             document.getElementById("confirmPassword").style.border="2px solid red"
@@ -49,44 +49,43 @@ class Signup extends Component{
         }
         }
 
-    handleOnchange = (event) => {
-        this.setState({
-            ...this.state,
+    const handleOnchange = (event) => {
+        setUser({
+            ...user,
             [event.target.name]: event.target.value
         })
     }
 
-    handleRedirectToLogin = (e) => {
+    const handleRedirectToLogin = (e) => {
         
-        this.props.onToggle(true);
+        userContext.userDispatch(toggleSignupLogin(true));
     }
 
-    handleonChangeName = (e) => {
-        this.handleOnchange(e);
-        this.props.onChangeName();
+    const handleonChangeName = (e) => {
+        handleOnchange(e);
+        onChangeName();
     }
 
-    handleonChangeEmail = (e) => {
-        this.handleOnchange(e);
-        this.props.onChangeEmail();
+    const handleonChangeEmail = (e) => {
+        handleOnchange(e);
+        onChangeEmail();
     }
 
-    handleonChangeMobile = (e) => {
-        this.handleOnchange(e);
-        this.props.onChangeMobile();
+    const handleonChangeMobile = (e) => {
+        handleOnchange(e);
+        onChangeMobile();
     }
 
-    handleonChangeGender = (e) => {
-        this.handleOnchange(e);
-        this.props.onChangeGender();
+    const handleonChangeGender = (e) => {
+        handleOnchange(e);
+        onChangeGender();
     }
 
-    handleonChangePassword = (e) => {
-        this.handleOnchange(e)
-        this.props.onChangePassword();
+    const handleonChangePassword = (e) => {
+        handleOnchange(e)
+        onChangePasswordStrength();
     }
 
-    render(){
         return(
             <div id="signup-page-right">
                 <div id="login-heading">
@@ -98,12 +97,12 @@ class Signup extends Component{
                             <input type="text" 
                             id="name"
                             name="name"
-                                    onChange={this.handleonChangeName}
+                                    onChange={handleonChangeName}
                                     required/>
                             <label>Enter Name</label><br/>
                         </div>
                     <div id="genderDiv" className="signupForm-elements">
-                        <select id="gender" name="gender" onChange={this.handleonChangeGender}>
+                        <select id="gender" name="gender" onChange={handleonChangeGender}>
                                 <option value="">Select Gender</option>
                                 <option value = "Male">Male</option>
                                 <option value="Female">Female</option>
@@ -114,7 +113,7 @@ class Signup extends Component{
                             <input type="text"
                             id="mobile"
                             name="mobile"
-                                    onChange={this.handleonChangeMobile}
+                                    onChange={handleonChangeMobile}
                                         required/>
                             <label>Enter Mobile Number</label><br/>
                         </div>
@@ -122,7 +121,7 @@ class Signup extends Component{
                             <input type="text" 
                             id="email"
                             name="email"
-                                    onChange={this.handleonChangeEmail}
+                                    onChange={handleonChangeEmail}
                                     required/>
                             <label>Enter Email Id</label><br/>
                         </div>
@@ -130,45 +129,33 @@ class Signup extends Component{
                         <input type="password" 
                             id="password"
                             name="password"
-                                onChange={this.handleonChangePassword}
+                                onChange={handleonChangePassword}
                                 required />
                             <label>Enter Password</label><br/>
-                            <i onClick={this.handlePasswordDisplay} id="password-eye" class="fas fa fa-eye"></i>
+                            <i onClick={handlePasswordDisplay} id="password-eye" class="fas fa fa-eye"></i>
                         </div>
                         <div id="confirmPasswordDiv" className="signupForm-elements">
                         <input type="password" 
                             id="confirmPassword"
                             name="confirmPassword"
-                            onChange={this.handleOnchange}
+                            onChange={handleOnchange}
                                 required/>
                         <label>Confirm Password</label><br/>
                         </div>
                         <div>
-                        <button onClick={this.handleSubmit} type="submit">Submit</button>
+                        <button onClick={handleSubmit} type="submit">Submit</button>
                         </div><span id="passwordMatch">Password does not match</span>
                         <span id="formatMatch">Please Enter inputs in proper format</span>
                     </form>
                     <div id="alternative">
                         <p>Already a member?&nbsp;&nbsp;</p>
                         
-                            <h4 onClick={this.handleRedirectToLogin}><span id="log-text">LOG&nbsp;</span>IN</h4>
+                            <h4 onClick={handleRedirectToLogin}><span id="log-text">LOG&nbsp;</span>IN</h4>
                     
                     </div>
                 </div>
         )
-    }
 }
 
- const mapDispatchToProps = (dispatch) =>{
-     return{
-         onToggle: (data)=> dispatch(toggleSignupLogin(data)),
-         onCreate: (data)=> dispatch(CreateUser(data)),
-        onChangeName : ()=>dispatch(onChangeName()),
-        onChangeEmail : ()=> dispatch(onChangeEmail()),
-        onChangeMobile : () =>dispatch(onChangeMobile()),
-        onChangeGender : ()=>dispatch(onChangeGender()),
-        onChangePassword : ()=> dispatch(onChangePasswordStrength()),
-     };
- }
 
-export default connect(null,mapDispatchToProps)(Signup);
+export default Signup;

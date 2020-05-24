@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj": {}
+    "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj": {}
   },
   "projects": {
-    "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj",
         "projectName": "Carpool.DataProvider",
-        "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -27,8 +27,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj": {
-                "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj"
+              "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj": {
+                "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj"
               }
             }
           }
@@ -72,14 +72,14 @@
         }
       }
     },
-    "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj",
         "projectName": "Carpool.Models",
-        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Models\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -124,14 +124,14 @@
         }
       }
     },
-    "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj": {
+    "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj",
+        "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj",
         "projectName": "Carpool.Repository",
-        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj",
+        "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj",
         "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Repository\\obj\\",
+        "outputPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\obj\\",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -147,8 +147,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj": {
-                "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj"
+              "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj": {
+                "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj"
               }
             }
           }

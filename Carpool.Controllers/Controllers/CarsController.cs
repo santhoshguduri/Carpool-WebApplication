@@ -24,15 +24,15 @@ namespace CarpoolApplication.Controllers
             _service = service;
         }
         [HttpGet("{id}")]
-        public long CheckIfOwnsCar(long id)
+        public long CheckIfOwnsCar([FromRoute]long id)
         {
             return _service.CheckIfOwnsCar(id);
         }
 
-        [HttpPost("{userId}")]
-        public void CreateCar(Car car,long userId)
+        [HttpPost]
+        public void CreateCar([FromBody]Car car)
         {
-            _service.CreateCar(car,userId);
+            _service.CreateCar(car);
         }
 
         [HttpDelete]
@@ -40,7 +40,5 @@ namespace CarpoolApplication.Controllers
         {
             _service.DeleteCar(id);
         }
-
-
     }
 }

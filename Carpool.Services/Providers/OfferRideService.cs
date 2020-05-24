@@ -42,7 +42,7 @@ namespace Carpool.Services
 
             _repository.Post(NewRideOffer);
 
-            foreach(string area in rideOffer.Route)
+            foreach(string area in rideOffer.NormalRoute)
             {
                 Place NewPlace = new Place
                 {

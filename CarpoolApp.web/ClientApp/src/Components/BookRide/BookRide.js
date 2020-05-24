@@ -1,66 +1,65 @@
-import React,{Component} from 'react';
+import React,{useState, useEffect, useContext} from 'react';
 import MatchedUser from '../MatchedUser/MatchedUsers';
-import OfferRideStops from '../OfferRide/OfferRideStops';
-import { connect } from 'react-redux';
-import AutoComplete from '../Shared/AutoComplete';
-import { CreateRideBooking, searchAvailableRides } from '../../Redux/Services/RideBookingServices';
+import {OfferRideStops} from '../OfferRide/OfferRideStops';
+import {AutoComplete} from '../Shared/AutoComplete';
+import { CreateRideBooking, searchAvailableRides } from '../../Services/RideBookingServices';
+import { BookingContext } from '../../Store/Context/BookingContext';
+import { AutocompleteContext } from '../../Store/Context/AutocompleteContext';
 
-class BookRide extends Component{
-    constructor(props){
-        super(props);
-        this.state={
-            rideDate:Date,
-            rideTime:''
-        }
-    }
-    componentDidMount(){
+function BookRide() {
+    
+    const [ride,setRide] = useState({});
+
+    const bookingContext = useContext(BookingContext);
+
+    const autocompleteContext = useContext(AutocompleteContext)
+
+    useEffect( () => {
         if(JSON.parse(sessionStorage.getItem('isBooking'))){
         document.getElementById('rideBookCard').style.height="80vh";
         document.getElementById('rideBookCard').style.transform="translate(20%,15%)";
         }
-    }
+    },[])
 
-    handleNextBtn = (e) =>{
+    const handleNextBtn = (e) =>{
         e.preventDefault();
-        var rideDate = this.state.date;
-        var rideTime = this.state.time;
-        if(this.props.fromArea != '' && this.props.toArea !='' && rideTime != '' && rideDate != '')
+        var rideDate = ride.date;
+        var rideTime = ride.time;
+        if(autocompleteContext.autocompleteState.fromArea != '' && autocompleteContext.autocompleteState.toArea !='' && rideTime != '' && rideDate != '')
         {
-            this.setState({
+            setRide({...ride,
                 rideTime:rideTime,
                 rideDate:rideDate
             });
             document.getElementById("renderStopComponent").style.display="block";
         }
         if (JSON.parse(sessionStorage.getItem('isBooking'))) {
-            var seats = Number(this.state.seats);
-            console.log(this.props.fromArea, this.props.toArea, seats, rideDate, rideTime);
-            this.props.searchAvailable(this.props.fromArea,this.props.toArea,seats,rideDate,rideTime);
+            var seats = ride.seats;
+            console.log(autocompleteContext.autocompleteState.fromArea, autocompleteContext.autocompleteState.toArea, seats, rideDate, rideTime);
+            searchAvailableRides(autocompleteContext.autocompleteState.fromArea,autocompleteContext.autocompleteState.toArea,seats,rideDate,rideTime,bookingContext.bookingDispatch);
         }
     }
 
-    handleCheckbox = () =>{
+    const handleCheckbox = () =>{
         document.getElementById("renderStopComponent").style.display="none";
     }
 
-    handleOnChange = (event) => {
-        this.setState({
-            ...this.state,
+    const handleOnChange = (event) => {
+        setRide({...ride,
             [event.target.name]: event.target.value
         });
     }
 
-    handleCreateBooing = (e) => {
+    const handleCreateBooing = (e) => {
         e.preventDefault();
-        var rideBookingDate = this.state.date;
-        var time = this.state.time;
+        var rideBookingDate = ride.date;
+        var time = ride.time;
         
-        console.log(this.props.fromArea);
-        var seats = Number(this.state.seats);
-        var startPoint = this.props.fromArea;
-        var destination = this.props.toArea;
-        var rideFair = this.state.price;
-        var rideOfferId = this.state.offeredRideId;
+        var seats = Number(ride.seats);
+        var startPoint = autocompleteContext.autocompleteState.fromArea;
+        var destination = autocompleteContext.autocompleteState.toArea;
+        var rideFair = ride.price;
+        var rideOfferId = ride.offeredRideId;
         var bookingUserId = JSON.parse(sessionStorage.getItem('authorized')).userId;
         const booking ={
             startPoint,
@@ -73,24 +72,24 @@ class BookRide extends Component{
             bookingUserId
         }
         console.log(booking);
-        this.props.createBooking(booking);
+        CreateRideBooking(booking);
     } 
 
-    handleOnClick = (ride) =>{
-        this.setState({
+    const handleOnClick = (ride) =>{
+        setRide({
+            ...ride,
             price: ride.rideFair,
             offeredRideId : ride.rideOfferId
         });
         document.getElementById("confirmationDiv").style.display="block";
     }
 
-    handleCancel = () =>{
+    const handleCancel = () =>{
         document.getElementById("confirmationDiv").style.display="none";
     }
 
-    render(){
-        console.log(this.props.fromArea,this.props.toArea);
-        return(
+    console.log(autocompleteContext.autocompleteState.fromArea,autocompleteContext.autocompleteState.toArea);
+    return(
             
        <div className="appBackground">
                 <div className="row">
@@ -99,20 +98,20 @@ class BookRide extends Component{
                         <h2>Book a Ride</h2>:<h2>Offer a Ride</h2>
                     }
                     <p>we get you the matches asap !</p>
-                    <input onClick={this.handleCheckbox} className="rideBookCheckbox" type="checkbox"></input>
+                    <input className="rideBookCheckbox" type="checkbox"></input>
                     <form className="rideBookForm">
                         <div id="routeDetails">
                         <label className="bookFormLabel" htmlFor="from">From</label><br></br>
                         <div class="dropdown">
-                        <AutoComplete search="from" />
+                        <AutoComplete handlePlaceChange={autocompleteContext.autocompleteDispatch} search="from" />
                         </div>
                         <label className="bookFormLabel" htmlFor="to">To</label><br></br>
                         <div class="dropdown">
-                        <AutoComplete search="to" />
+                        <AutoComplete handlePlaceChange={autocompleteContext.autocompleteDispatch} search="to" />
                         </div>
                         <label className="bookFormLabel" htmlFor="date">Date</label><br></br>
                                 <input type="date"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     name="date"
                                     id="date"
                                     required /><br></br>
@@ -129,7 +128,7 @@ class BookRide extends Component{
                             <React.Fragment>
                                     <label className="bookFormLabel" htmlFor="seatCapacity" >Select Seats</label><br></br>
                                     <select className="form-control"
-                                        onChange={this.handleOnChange}
+                                        onChange={handleOnChange}
                                         name="seats"
                                         id="seatCapacity"
                                         required>
@@ -144,7 +143,7 @@ class BookRide extends Component{
                         <label className="bookFormLabel" >Time</label><br></br>
                         <div className="checkboxDiv">   
                                 <input className="timeCheckbox"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     type="radio"
                                     value="5am-9am"
                                     name="time"
@@ -153,7 +152,7 @@ class BookRide extends Component{
                         </div>
                         <div className="checkboxDiv">
                                 <input className="timeCheckbox"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     type="radio"
                                     value="9am-12pm"
                                     name="time"
@@ -162,7 +161,7 @@ class BookRide extends Component{
                         </div>
                         <div className="checkboxDiv">
                                 <input className="timeCheckbox"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     type="radio"
                                     value="12pm-3pm"
                                     name="time"
@@ -171,7 +170,7 @@ class BookRide extends Component{
                         </div>
                         <div className="checkboxDiv">
                                 <input className="timeCheckbox"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     type="radio"
                                     value="3pm-6pm"
                                     name="time"
@@ -180,7 +179,7 @@ class BookRide extends Component{
                         </div>
                         <div className="checkboxDiv">
                                 <input className="timeCheckbox"
-                                    onChange={this.handleOnChange}
+                                    onChange={handleOnChange}
                                     type="radio"
                                     value="6pm-9pm"
                                     name="time"
@@ -188,7 +187,7 @@ class BookRide extends Component{
                         <label className="timeCheckboxLabel" htmlFor="6-9">6pm - 9pm</label><br></br>
                         </div>
                         {JSON.parse(sessionStorage.getItem('isBooking'))?
-                            <button onClick={this.handleNextBtn} className="submitBtn">Submit</button>:<h4 onClick={this.handleNextBtn}>Next >></h4>
+                            <button onClick={handleNextBtn} className="submitBtn">Submit</button>:<h4 onClick={handleNextBtn}>Next >></h4>
                         }
                     </form>
                 </div>
@@ -196,40 +195,25 @@ class BookRide extends Component{
             <div id="renderStopComponent">
                 {JSON.parse(sessionStorage.getItem('isBooking'))?
                     <div className="matchedUsers">
-                    {this.props.rides.length!=0?
-                        (<h2>Your Matches</h2>):<h3>No Rides Offers Aavailable as of now. Please try after sometime</h3>}
-                    {this.props.rides.map((ride) =>
-                        <div onClick={() => this.handleOnClick(ride)}>
-                        <MatchedUser key={ride.rideOfferId} ride ={ride}/>
-                        </div>
+                    {
+                        bookingContext.bookingState.rides.length!=0?
+                            (<h2>Your Matches</h2>):<h3>No Rides Offers Aavailable as of now. Please try after sometime</h3>}
+                    {
+                        bookingContext.bookingState.rides.map((ride) =>
+                            <div onClick={() => handleOnClick(ride)}>
+                            <MatchedUser key={ride.rideOfferId} ride ={ride}/>
+                            </div>
                     )}
                     <div id="confirmationDiv">
                         <h3>Confirm Booking ?</h3>
-                        <button onClick={this.handleCreateBooing} type="button" class="btn btn-success">Book</button>
-                        <button onClick={this.handleCancel} type="button" class="btn btn-danger">Cancel</button>
+                        <button onClick={handleCreateBooing} type="button" class="btn btn-success">Book</button>
+                        <button onClick={handleCancel} type="button" class="btn btn-danger">Cancel</button>
                     </div>
-                </div>:<OfferRideStops date={this.state.rideDate} time={this.state.rideTime} />
+                </div>:<OfferRideStops date={ride.rideDate} time={ride.rideTime} />
                 }
             </div>
         </div>
         )
-    }
 }
 
-const mapStateToProps= state =>{
-    return{
-        fromArea:state.searchFrom.place,
-        toArea:state.searchTo.place,
-        rides:state.searchAvailable.rides
-    }
-}
-
-const mapDispatchToProps = dispatch =>{
-    return{
-        createBooking : (data)=>dispatch(CreateRideBooking(data)),
-        searchAvailable : (from,to,seats,date,time) => dispatch(searchAvailableRides(from,to,seats,date,time))
-    }
-}
-
-
-export default connect(mapStateToProps,mapDispatchToProps)(BookRide);
+export default BookRide;

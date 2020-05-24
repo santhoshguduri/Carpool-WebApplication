@@ -1,15 +1,13 @@
-import React, { Component } from 'react';
-import appRepresent from '../../Assests/Static Files/img1.png'
-import logo from '../../Assests/Static Files/logo (1).png'
+import React, { useContext } from 'react';
+import AppStartBackground from '../../Assests/Static Files/img1.png'
 import Signup from './Signup'
 import Login from './Login'
-import { connect } from 'react-redux';
 
-class AppDescription extends Component{
+import {UserContext} from "../../Store/Context/UserContext";
+ 
+function AppStart() {
 
-    
-
-    render(){
+    const userContext = useContext(UserContext);
         
         return(
             <div className="signup-page">
@@ -19,22 +17,16 @@ class AppDescription extends Component{
                     <h1 className="header"> INTO <span id="money-text">MONEY</span></h1>
                     <h2 id="tagline" >RIDES ON TAP</h2>
                 </div>
-                <img id="signup-background" src={appRepresent} alt="signup-background"/>
+                <img id="signup-background" src={AppStartBackground} alt="signup-background"/>
                 </div>
                 {
-                    this.props.isLoginDisplayed?
+                    userContext.userState.isLoginRendered?
                     <Login ></Login>:
                     <Signup ></Signup>
                 }
             </div>
-        )
-    }
+        );
 }
 
-const mapStateToProps = (state,props) =>{
-    return{
-        isLoginDisplayed : state.toggle.isLoginRendered
-    }
-}
 
-export default connect(mapStateToProps)(AppDescription);
+export default AppStart;

@@ -6,7 +6,7 @@ namespace Models.RequestModels
 {
     public class RideOffer
     {
-        public List<string> Route { get; set; }
+        public List<string> NormalRoute { get; set; }
 
         public int AvailableSeats { get; set; }
 

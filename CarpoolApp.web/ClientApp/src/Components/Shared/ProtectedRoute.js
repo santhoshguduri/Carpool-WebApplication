@@ -1,22 +1,16 @@
 import React,{ Component } from "react";
-import { Redirect } from "react-router";
-import { connect } from "react-redux";
+import {Redirect} from 'react-router'
 
-class ProtectedRoute extends Component{
+export function ProtectedRoute(props) {
     
-    render(){
-        const Component = this.props.component;
+        const Component = props.component;
+
         const data = JSON.parse(sessionStorage.getItem('authorized'));
+
         return data!=null && data.token!=''? (
+
             <Component/>
         ) : (
-        <Redirect to={{pathname:'/'}} />)
-    }
-}
 
-const mapStateToProps = state => {
-    return{
-        isAuthenticated : state.authenticate.isAuthenticated
-    }
+        <Redirect to={{pathname:'/'}} />)
 }
-export default connect(mapStateToProps)(ProtectedRoute);

@@ -8,7 +8,7 @@ namespace Carpool.Services
     public interface ICarServices
     {
 
-        void CreateCar(Car car,long userId);
+        void CreateCar(Car car);
 
         void DeleteCar(long id);
 

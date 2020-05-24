@@ -16,9 +16,8 @@ namespace Carpool.Services
             _repository = repository;
         }
 
-        public void CreateCar(Car car, long userId)
+        public void CreateCar(Car car)
         {
-            car.CarOwnerId = userId;
             _repository.Post(car);
         }
 

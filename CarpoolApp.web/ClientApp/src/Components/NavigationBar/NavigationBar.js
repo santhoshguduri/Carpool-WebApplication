@@ -40,10 +40,5 @@ class NavBar extends Component{
     }
 }
 
-const mapStateToProps = state =>{
-    return{
-        response : state.authenticate
-    }
-}
 
-export default connect(mapStateToProps)(NavBar);
+export default NavBar;

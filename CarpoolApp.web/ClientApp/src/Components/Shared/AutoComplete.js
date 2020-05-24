@@ -1,32 +1,37 @@
-import React from 'react';
-import PlacesAutocomplete from 'react-places-autocomplete';
+import React, { useState, Component } from 'react';
+import PlacesAutocomplete,{handleSelect} from 'react-places-autocomplete';
 import { connect } from 'react-redux';
-import { autocompleteToSuccess, autocompleteFromSuccess, autocompleteCheckpointSuccess } from '../../Redux/Actions/AutocompleteActions';
+import { autocompleteToSuccess, autocompleteFromSuccess, autocompleteCheckpointSuccess } from '../../Store/Actions/AutocompleteActions';
  
-class AutoComplete extends React.Component {
-    constructor(props){
-        super(props);
+export class AutoComplete extends Component {
+  constructor(props){
+    super(props);
     this.state={
-        place:''
+      place:''
     }
-    }
+  }
+
+
+    // const [place,setPlace] = useState({
+    //   getAreaName:''
+    // });
+    // const [getAreaName,setAreaName] = useState('');
  
   handleChange = (place) => {
     this.setState({ place });
-    if(this.props.search=="from")
+    if(this.props.search == "from")
     {
-      this.props.onSearchFromAutocomplete(place);
+      this.props.handlePlaceChange(autocompleteFromSuccess(place));
     }
     else if(this.props.search == "to"){
-      this.props.onSearchToAutocomplete(place);
+      this.props.handlePlaceChange(autocompleteToSuccess(place));
     }
     else if(this.props.search == "stop"){
       console.log(this.props.indexKey-1);
       this.props.handleOnChange(place,this.props.indexKey-1);
     }
   }
- 
-  render() {
+ render(){
     return (
       <PlacesAutocomplete 
         value={this.state.place}
@@ -36,6 +41,7 @@ class AutoComplete extends React.Component {
         {({ getInputProps, suggestions, getSuggestionItemProps, loading }) => (
           <div>
             <input style={{zIndex:"-1"}} ref={(input) =>this.getAreaName=input}
+            
               {...getInputProps({
                 placeholder: 'Search Places ...',
                 className: 'location-search-input'
@@ -69,13 +75,3 @@ class AutoComplete extends React.Component {
     );
   }
 }
-
-const mapDispatchToProps = dispatch =>{
-  return{
-    onSearchFromAutocomplete : (data) => dispatch(autocompleteFromSuccess(data)),
-    onSearchToAutocomplete : (data) => dispatch(autocompleteToSuccess(data)),
-    viaPointAutocomplete : (data) => dispatch(autocompleteCheckpointSuccess(data))
-  }
-}
-
-export default connect(null,mapDispatchToProps)(AutoComplete);

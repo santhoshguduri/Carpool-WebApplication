@@ -8919,18 +8919,18 @@
     },
     "Carpool.DataProvider/1.0.0": {
       "type": "project",
-      "path": "../DataProvider/Carpool.DataProvider.csproj",
-      "msbuildProject": "../DataProvider/Carpool.DataProvider.csproj"
+      "path": "../Carpool.DataProvider/Carpool.DataProvider.csproj",
+      "msbuildProject": "../Carpool.DataProvider/Carpool.DataProvider.csproj"
     },
     "Carpool.Models/1.0.0": {
       "type": "project",
-      "path": "../Models/Carpool.Models.csproj",
-      "msbuildProject": "../Models/Carpool.Models.csproj"
+      "path": "../Carpool.Models/Carpool.Models.csproj",
+      "msbuildProject": "../Carpool.Models/Carpool.Models.csproj"
     },
     "Carpool.Repository/1.0.0": {
       "type": "project",
-      "path": "../Repository/Carpool.Repository.csproj",
-      "msbuildProject": "../Repository/Carpool.Repository.csproj"
+      "path": "../Carpool.Repository/Carpool.Repository.csproj",
+      "msbuildProject": "../Carpool.Repository/Carpool.Repository.csproj"
     },
     "Carpool.Services/1.0.0": {
       "type": "project",
@@ -8941,6 +8941,7 @@
   "projectFileDependencyGroups": {
     ".NETCoreApp,Version=v3.1": [
       "Carpool.DataProvider >= 1.0.0",
+      "Carpool.Models >= 1.0.0",
       "Carpool.Services >= 1.0.0",
       "Microsoft.AspNetCore.Authentication.JwtBearer >= 3.1.3",
       "Microsoft.EntityFrameworkCore.Design >= 3.1.3",
@@ -8956,11 +8957,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
+      "projectUniqueName": "F:\\santhosh\\CarpoolWebApp\\Carpool.Controllers\\CarpoolApplication.csproj",
       "projectName": "CarpoolApplication",
-      "projectPath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
+      "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Controllers\\CarpoolApplication.csproj",
       "packagesPath": "C:\\Users\\SANTHOSH\\.nuget\\packages\\",
-      "outputPath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\obj\\",
+      "outputPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Controllers\\obj\\",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "C:\\Users\\SANTHOSH\\AppData\\Roaming\\NuGet\\NuGet.Config",
@@ -8976,11 +8977,14 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
+            "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.DataProvider\\Carpool.DataProvider.csproj"
+            },
+            "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj"
+            },
             "F:\\santhosh\\CarpoolWebApp\\Carpool.Services\\Carpool.Services.csproj": {
               "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Services\\Carpool.Services.csproj"
-            },
-            "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj": {
-              "projectPath": "F:\\santhosh\\CarpoolWebApp\\DataProvider\\Carpool.DataProvider.csproj"
             }
           }
         }

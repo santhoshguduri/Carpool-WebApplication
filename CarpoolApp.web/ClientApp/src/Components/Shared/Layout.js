@@ -2,19 +2,33 @@ import React, { Component } from 'react';
 import { Container } from 'reactstrap';
 import NavBar from '../NavigationBar/NavigationBar';
 
-class Layout extends Component{
-    render(){
+import {UserProvider} from '../../Store/Context/UserContext';
+import {RideProvider} from '../../Store/Context/RidesContext';
+import {CarProvider} from '../../Store/Context/CarContext';
+import {BookingProvider} from '../../Store/Context/BookingContext';
+import {AutocompleteProvider} from '../../Store/Context/AutocompleteContext';
+
+
+export function Layout(props) {
         return(
             <div>
-                <NavBar></NavBar>
-                <Container>
-                    {
-                        this.props.children
-                    }
-                </Container>
+                <UserProvider>
+                    <BookingProvider>
+                        <RideProvider>
+                            <CarProvider>
+                                <AutocompleteProvider>
+                                    <NavBar></NavBar>
+                                    <Container>
+                                    {
+                                        props.children
+                                    }
+                                    </Container>
+                                </AutocompleteProvider>
+                            </CarProvider>
+                        </RideProvider>
+                    </BookingProvider>
+                </UserProvider>
+             
             </div>
         )
-    }
 }
-
-export default Layout;

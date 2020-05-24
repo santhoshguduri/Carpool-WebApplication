@@ -25,6 +25,7 @@
       "CarpoolApplication/1.0.0": {
         "dependencies": {
           "Carpool.DataProvider": "1.0.0",
+          "Carpool.Models": "1.0.0",
           "Carpool.Services": "1.0.0",
           "Microsoft.AspNetCore.Authentication.JwtBearer": "3.1.3",
           "Microsoft.EntityFrameworkCore.Design": "3.1.3",

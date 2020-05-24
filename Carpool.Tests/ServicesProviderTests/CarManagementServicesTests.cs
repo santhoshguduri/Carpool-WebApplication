@@ -26,7 +26,7 @@ namespace Carpool.Tests.ServiceProvidersTests
 
                 mock.Mock<IRepositoryManager<Car>>().Setup(x => x.Post(SampleCar)).Verifiable();
 
-                TestService.CreateCar(SampleCar,19);
+                TestService.CreateCar(SampleCar);
 
                 mock.Mock<IRepositoryManager<Car>>().Verify(x => x.Post(SampleCar), Times.Exactly(1));
             }

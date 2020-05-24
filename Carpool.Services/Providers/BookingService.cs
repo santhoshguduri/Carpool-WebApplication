@@ -164,7 +164,7 @@ namespace Carpool.Services
                 rideDetails.Name = _userRepository.Get(booking.BookingUserId).Name;
                 rideDetails.StartPoint = booking.StartPoint.Split(",")[0];
                 rideDetails.Destination = booking.Destination.Split(",")[0];
-                rideDetails.RideDate = booking.RideBookingDate.ToString("dd/MM/yyyy");
+                rideDetails.RideBookingDate = booking.RideBookingDate.ToString("dd/MM/yyyy");
 
                 RideBookingResponses.Add(rideDetails);
             }

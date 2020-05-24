@@ -14,12 +14,12 @@ namespace Models.ResponseModels
 
         public string Destination { get; set; }
 
-        public string RideDate { get; set; }
+        public string RideBookingDate { get; set; }
 
-        public string RideTime { get; set; }
+        public string Time { get; set; }
 
-        public double Price { get; set; }
+        public double RideFair { get; set; }
 
-        public int SeatsAvailable { get; set; }
+        public int Seats { get; set; }
     }
 }

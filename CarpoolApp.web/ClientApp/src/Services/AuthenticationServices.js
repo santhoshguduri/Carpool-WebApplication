@@ -1,9 +1,12 @@
-import {userAutenticationSuccess} from '../Actions/AuthenticationActions';
-import {userAutenticationFailure} from '../Actions/AuthenticationActions';
-import {toggleSignupLogin} from '../Actions/AuthenticationActions'
+import {userAutenticationSuccess} from '../Store/Actions/AuthenticationActions';
+import {userAutenticationFailure} from '../Store/Actions/AuthenticationActions';
+import {toggleSignupLogin} from '../Store/Actions/AuthenticationActions'
+import { useContext } from 'react';
+import { UserContext } from '../Store/Context/UserContext';
 
-export const AuthenticateUser =(userName,password) => {
-    return function(dispatch){
+
+
+export const AuthenticateUser =(userName,password,userContext) => {
         fetch('https://localhost:44304/users/authenticate?username='+userName+'&password='+password,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' }
@@ -13,15 +16,14 @@ export const AuthenticateUser =(userName,password) => {
     })
         .then(response => {
             console.log(response);
-            dispatch(userAutenticationSuccess(response));
+            userContext.userDispatch(userAutenticationSuccess(response));
             sessionStorage.setItem('authorized',JSON.stringify(response));
             window.location.replace('/home');
         })
         .catch(error=>{
-            dispatch(userAutenticationFailure(error));
+            userContext.userDispatch(userAutenticationFailure(error));
             console.log(error);
         });
-    }
 }
 
 export const toggle=(data)=>{
@@ -31,7 +33,6 @@ export const toggle=(data)=>{
 }
 
 export const getLastActionsId =() => {
-    return function(dispatch){
         fetch('https://localhost:44304/users/getlastactionskeys/'+JSON.parse(sessionStorage.getItem('authorized')).userId,{method: 'get',
         headers: {  "accept":"application/json",
             'Content-Type': 'application/json' ,
@@ -47,5 +48,4 @@ export const getLastActionsId =() => {
         .catch(error=>{
             console.log(error);
         });
-    }
 }

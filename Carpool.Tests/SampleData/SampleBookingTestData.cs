@@ -109,10 +109,10 @@ namespace Carpool.Tests.SampleData
             {
                 StartPoint = "Ashoknagar",
                 Destination = "Venkampet",
-                SeatsAvailable = 4,
-                RideDate = DateTime.Now.Date.ToShortDateString(),
-                RideTime = "3am-6am",
-                Price = 500,
+                Seats = 4,
+                RideBookingDate = DateTime.Now.Date.ToShortDateString(),
+                Time = "3am-6am",
+                RideFair = 500,
                 Name = "Santhu"
             };
             return response;

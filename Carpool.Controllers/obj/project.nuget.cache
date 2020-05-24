@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "1nLtTEsX7KTb+UOv6TfXrFBxsqfHLegwJsQd52J+y9mLNI5dUA+5osafB+iMcVnUA438SyeB1Hnkua1vIaD32Q==",
+  "dgSpecHash": "8EDunYTfKt36HFi74i+7z3Fah71H8L/Kq/dSTQyLh9P9+rrjPzZmONPz45bj3MIWsNpL6wzwnRMGAjZZaxRc1A==",
   "success": true,
-  "projectFilePath": "F:\\santhosh\\CarpoolWebApp\\CarpoolApplication\\CarpoolApplication.csproj",
+  "projectFilePath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Controllers\\CarpoolApplication.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\SANTHOSH\\.nuget\\packages\\automapper\\9.0.0\\automapper.9.0.0.nupkg.sha512",
     "C:\\Users\\SANTHOSH\\.nuget\\packages\\automapper.extensions.microsoft.dependencyinjection\\7.0.0\\automapper.extensions.microsoft.dependencyinjection.7.0.0.nupkg.sha512",

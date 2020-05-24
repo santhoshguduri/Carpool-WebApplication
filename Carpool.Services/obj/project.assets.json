@@ -5247,18 +5247,18 @@
     },
     "Carpool.DataProvider/1.0.0": {
       "type": "project",
-      "path": "../DataProvider/Carpool.DataProvider.csproj",
-      "msbuildProject": "../DataProvider/Carpool.DataProvider.csproj"
+      "path": "../Carpool.DataProvider/Carpool.DataProvider.csproj",
+      "msbuildProject": "../Carpool.DataProvider/Carpool.DataProvider.csproj"
     },
     "Carpool.Models/1.0.0": {
       "type": "project",
-      "path": "../Models/Carpool.Models.csproj",
-      "msbuildProject": "../Models/Carpool.Models.csproj"
+      "path": "../Carpool.Models/Carpool.Models.csproj",
+      "msbuildProject": "../Carpool.Models/Carpool.Models.csproj"
     },
     "Carpool.Repository/1.0.0": {
       "type": "project",
-      "path": "../Repository/Carpool.Repository.csproj",
-      "msbuildProject": "../Repository/Carpool.Repository.csproj"
+      "path": "../Carpool.Repository/Carpool.Repository.csproj",
+      "msbuildProject": "../Carpool.Repository/Carpool.Repository.csproj"
     }
   },
   "projectFileDependencyGroups": {
@@ -5298,11 +5298,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj": {
-              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Models\\Carpool.Models.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Models\\Carpool.Models.csproj"
             },
-            "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj": {
-              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Repository\\Carpool.Repository.csproj"
+            "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj": {
+              "projectPath": "F:\\santhosh\\CarpoolWebApp\\Carpool.Repository\\Carpool.Repository.csproj"
             }
           }
         }

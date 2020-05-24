@@ -1,49 +1,45 @@
-import React,{Component} from 'react';
-import {Link, Redirect} from 'react-router-dom';
-import {connect} from 'react-redux';
-import { AuthenticateUser } from '../../Redux/Services/AuthenticationServices';
-import { toggleSignupLogin } from '../../Redux/Actions/AuthenticationActions';
-import { store } from '../../Redux/Store';
+import React,{useState, useContext} from 'react';
+import { AuthenticateUser,toggle } from '../../Services/AuthenticationServices';
+import { UserContext } from '../../Store/Context/UserContext';
+import { toggleSignupLogin } from '../../Store/Actions/AuthenticationActions';
 
-class Login extends Component{
-    constructor(props) {
-        super(props);
-        
-    }
+function Login() {
 
-    handleSubmit = (e) => {
+    const userContext = useContext(UserContext)
+
+    const [authenticationDetails,setAuthenticationDetails] = useState({});
+
+    const handleSubmit = (e) => {
         e.preventDefault();
-        console.log(this.state);
-        const userName = this.state.email;
-        const password = this.state.password;
+        console.log(authenticationDetails);
+        const userName = authenticationDetails.email;
+        const password = authenticationDetails.password;
 
         console.log(userName,password);
-        this.props.userAuthentication(userName,password);
+        AuthenticateUser(userName,password,userContext);
     }
 
-    handleOnChange = (event) => {
-        this.setState({
-            ...this.state,
+    const handleOnChange = (event) => {
+        setAuthenticationDetails({
+            ...authenticationDetails,
             [event.target.name]: event.target.value
         });
     }
 
-    handlePasswordDisplay = () => {
+    const handlePasswordDisplay = () => {
         var inputElement = document.getElementById("password");
         if (inputElement.type === "password") {
             inputElement.type = "text";
         } else {
             inputElement.type = "password";
-        }
-      }
+        } 
+    }
 
-      handleRedirectToSignup = () =>{
-        
-        this.props.onToggle(false);
-      }
+    const handleRedirectToSignup = () =>{
+        userContext.userDispatch(toggleSignupLogin(false));
+    }
 
-    render(){
-        return(
+    return(
             <div id="login-page">
                 <div id="login-heading">
                 <h2>Log In</h2>
@@ -52,7 +48,7 @@ class Login extends Component{
                     <form id="signupForm" >
                         <div className="signupForm-elements">
                         <input type="text"
-                            onChange={this.handleOnChange}
+                            onChange={handleOnChange}
                                     name="email"
                                     id = "email"
                                     defaultValue="" required/>
@@ -60,39 +56,25 @@ class Login extends Component{
                         </div>
                         <div className="signupForm-elements">
                         <input type="password"
-                            onChange={this.handleOnChange}
+                            onChange={handleOnChange}
                                     id="password"
                                     name="password"
                                     defaultValue="" required/>
                             <label>Enter Password</label><br/>
-                            <i onClick={this.handlePasswordDisplay} id="password-eye" className="fas fa fa-eye"></i>
+                            <i onClick={handlePasswordDisplay} id="password-eye" className="fas fa fa-eye"></i>
                         </div>
                         <div>
-                        <button onClick={this.handleSubmit} type="submit">Submit</button>
+                        <button onClick={handleSubmit} type="submit">Submit</button>
                         </div>
                     </form>
                     <div id="alternative">
                         <p>Not a member yet?&nbsp;&nbsp;</p>
-                        <h4 onClick={this.handleRedirectToSignup}><span id="log-text">SIGN&nbsp;</span>UP</h4>
+                        <h4 onClick={handleRedirectToSignup}><span id="log-text">SIGN&nbsp;</span>UP</h4>
                     </div><br></br>
-                    {this.props.user.error !== ''?
+                    {userContext.userState.error !== ''?
                     <h5 style={{color:"red"}}>Username or Password is incorrect</h5>:<React.Fragment></React.Fragment>}
             </div>
         )
-    }
 }
 
-const mapStateToProps = state =>{
-    return{
-        user : state.authenticate
-    }
-}
-
- const mapDispatchToProps = (dispatch) =>{
-     return{
-         onToggle: (data)=> dispatch(toggleSignupLogin(data)),
-         userAuthentication: (username,password)=> dispatch(AuthenticateUser(username,password))
-     };
- }
-
-export default connect(mapStateToProps,mapDispatchToProps)(Login);
+export default Login;
