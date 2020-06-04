@@ -28,9 +28,6 @@ namespace Carpool.Services
 
         public void CreateNewUser(User user)
         {
-            string Email = user.Email;
-            string[] Username = Email.Split("@");
-            user.Username = Username[0];
             _repository.Post(user);
         }
 
